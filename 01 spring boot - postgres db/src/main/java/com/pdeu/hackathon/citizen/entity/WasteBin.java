@@ -1,10 +1,8 @@
 package com.pdeu.hackathon.citizen.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,7 +13,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "waste_bin")
+@JacksonXmlRootElement(localName = "waste_bin")
 public class WasteBin {
+
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

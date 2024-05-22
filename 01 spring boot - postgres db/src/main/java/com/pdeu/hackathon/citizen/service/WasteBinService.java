@@ -28,6 +28,10 @@ public class WasteBinService {
         return WasteBinMapper.toDTO(wasteBinRepository.findByLocation(location));
     }
 
+    public List<WasteBinDTO>  getWasteBinsByLocationCustom(String location) {
+        return WasteBinMapper.toDTOs(wasteBinRepository.getByLocationNative(location));
+    }
+
     public List<WasteBinDTO> getWasteBinByLatitude(double latitude) {
         List<WasteBin> wasteBins = wasteBinRepository.findByLatitude(latitude);
         List<WasteBinDTO> wasteBinDTOs = WasteBinMapper.toDTOs(wasteBins);
@@ -47,5 +51,7 @@ public class WasteBinService {
     }
 
 
-
+    public List<WasteBinDTO> getWasteBins() {
+        return WasteBinMapper.toDTOs(wasteBinRepository.findAll());
+    }
 }
