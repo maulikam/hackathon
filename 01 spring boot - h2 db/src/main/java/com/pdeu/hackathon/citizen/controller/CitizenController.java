@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/citizens")
+
 public class CitizenController {
 
     @Autowired
